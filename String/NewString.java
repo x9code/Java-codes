@@ -1,7 +1,5 @@
 import java.util.Arrays;
-
 class NewString{
-
 	public static void main(String[] args) {
 		String s = "Welcome";
 		int l = s.length();
