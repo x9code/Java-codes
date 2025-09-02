@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class NewString{
 
 	public static void main(String[] args) {
@@ -7,19 +9,14 @@ class NewString{
 		char[] upper = new char[20];
 		char[] lower = new char[20]; 
 		int uIndex = 0, lIndex = 0;
-		for( char n: c){
-			for(char i ='A';i<='Z';i++){
-				if(n==i){
-					upper[uIndex++]=n;
-				}
-			}
-			for(char r ='a';r<='z';r++){
-				if(n==r){
-					lower[lIndex++] = r;
-				}
-			}
-		}
-		System.out.println("upper cases : "+Arrays.toString(upper));
-		System.out.println("lower cases : "+Arrays.toString(lower));
+		for (char n : c) {
+            if (n >= 'A' && n <= 'Z') {
+                upper[uIndex++] = n;  // store uppercase letter
+            } else if (n >= 'a' && n <= 'z') {
+                lower[lIndex++] = n;  // store lowercase letter
+            }
+        }
+		System.out.println("Upper cases: " + Arrays.toString(Arrays.copyOf(upper, uIndex)));
+        System.out.println("Lower cases: " + Arrays.toString(Arrays.copyOf(lower, lIndex)));
 	}
 }
