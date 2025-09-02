@@ -17,13 +17,13 @@ class UPI{
 class PaymentService{
 	public void makePayment(Object payment){
 		if(payment instanceof CardPayment){
-			CardPayment cp = (CardPayment) payment;
+			CardPayment cp = (CardPayment) payment;//down casting
 			cp.getCardDatails();
 			cp.verifyCVV();
 			System.out.println("payment done by card");
 		}
 		else if(payment instanceof UPI){
-			UPI u = (UPI) payment;
+			UPI u = (UPI) payment;//Down casting
 			u.verifyUpiId();
 			u.verifyPIN();
 			System.out.println("payment done by UPI");
@@ -33,7 +33,7 @@ class PaymentService{
 class DerivedCasting3{
 	public static void main(String[] args) {
 		System.out.println("starts.......");
-// ClassCastException - (JVM will throw this exception at runtime) / when we downcast to other 
+// ClassCastException - (JVM will throw this exception at runtime) / when we downcast to other sub class
 		PaymentService ps = new PaymentService();
 		CardPayment cp1 = new CardPayment();
 		UPI u1 = new UPI();

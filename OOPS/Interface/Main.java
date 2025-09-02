@@ -1,0 +1,21 @@
+interface Vehicle {
+    void start(); // abstract method
+
+    default void honk() {   // default method
+        System.out.println("Beep beep!");
+    }
+}
+
+class Car implements Vehicle {
+    public void start() {
+        System.out.println("Car starts with key");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.start();  // Car starts with key
+        car.honk();   // Beep beep!
+    }
+}
