@@ -2,12 +2,13 @@ abstract class User{
 	public void login(){
 		System.out.println("User trying to login");
 	}
-	abstract public void signup();
+	//abstract public void signup();
 }
 interface Postable{
 	public void postStories();
 	public void postPhotos();
 	public void postVideos();
+	public void signup();
 }
 class NormalUser extends User implements Postable{
     @Override

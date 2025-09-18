@@ -1,11 +1,11 @@
 interface Run{
-	int x = 100;
-	public void test();
+	int x = 100;//final and static
+	public void test();//abstract
 }
 interface Sample extends Run{
-	public void count();
+	public void count();//new abstract method in the extened interface
 }
-class Demo extends Object implements Sample{
+class Demo implements Sample{
 	@Override
 	public void test(){
 		System.out.println("override test() of Run interface ");
@@ -22,6 +22,7 @@ class Interface1{
 		Demo d = new Demo();
 		d.test();
 		d.count();
+		System.out.println(d.x);
 		System.out.println("ends........");
 	}
 }
